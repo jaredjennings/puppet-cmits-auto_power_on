@@ -16,5 +16,6 @@
 # \subsection{Disable automatic power on after power failure}
 
 class auto_power_on::no {
-    include "auto_power_on::no::${::osfamily}"
+    $lower_osfamily = downcase($::osfamily)
+    include "auto_power_on::no::${lower_osfamily}"
 }
